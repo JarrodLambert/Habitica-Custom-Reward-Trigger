@@ -1,6 +1,6 @@
 # Bulk Skill Casting on Habitica via Google Apps Script
 
-This Google Apps Script automates the process of casting multiple skills in [Habitica](https://habitica.com/) whenever a specific custom reward is purchased. Enhance your Habitica experience by streamlining repetitive actions and automating in-game behaviors.
+This Google Apps Script automates the process of casting multiple skills in [Habitica](https://habitica.com/) whenever a specific custom reward is purchased. Future version will add more functionality to enhance your Habitica experience by streamlining repetitive actions and automating in-game behaviors.
 
 ## Table of Contents
 
@@ -41,7 +41,7 @@ The script uses Script Properties to store configuration data securely.
 
 1. **Set Script Properties:**
 
-   In the script editor, set the following values in the `setScriptProperties` function:
+   In the script editor, set the following values in the `setScriptProperties` function. Details on how to obtain these can be found in the [Configuration Details](#configuration-details) section of this README:
 
    - **SKILL_IDS:** A JSON string of skill objects to be cast.
    - **SPECIFIC_REWARD_ID:** The ID of the custom reward that triggers the script.
@@ -114,6 +114,8 @@ To trigger the script when the custom reward is purchased, set up a webhook in H
 
 ## Configuration Details
 
+Run the `setScriptProperties` function and re-deploy after changing any of the following values in the Google Apps Script.
+
 ### Obtaining USER_ID and API_TOKEN
 
 1. **Access API Settings:**
@@ -133,7 +135,7 @@ To trigger the script when the custom reward is purchased, set up a webhook in H
 ### Customizing SKILL_IDS
 
 - **id:** The ID of the skill to cast (e.g., `"toolsOfTrade"`).
-- **target (optional):** The Task ID of the target if the skill affects another user.
+- **target (optional):** The Task ID of the target if the skill affects another user. Use a tool like [Habitica User Data Display Tool](https://tools.habitica.com) to get the ID of your task.
 
 **Example:**
 
@@ -152,7 +154,7 @@ To trigger the script when the custom reward is purchased, set up a webhook in H
 
 2. **Find the Reward ID:**
 
-   - Use the Habitica API or a tool like [Habitica User Data Display Tool](https://tools.habitica.com) to get the ID of your custom reward.
+   - Use a tool like [Habitica User Data Display Tool](https://tools.habitica.com) to get the ID of your custom reward.
 
 3. **Add to Script Properties:**
 
